@@ -4,7 +4,7 @@ import {createGlobalStyle} from 'styled-components';
 const ThemeStyles = createGlobalStyle`
   .light {
     --bg-primary: #FFFFFF;
-    --bg-secondary: #FDFDFB;
+    --bg-secondary: #F8F8F8;
     --text-primary: #0A0A0A;
     --text-secondary: #BFBFBF;
     --color-purple: #5539A3;

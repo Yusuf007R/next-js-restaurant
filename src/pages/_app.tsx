@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/globals.css';
 import type {AppProps} from 'next/app';
 import {GlobalStyles} from 'twin.macro';
 import ThemeProvider from '../theme/theme-provider';
