@@ -7,24 +7,40 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit":"cz"
+    "commit": "cz"
   },
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.1",
+    "twin.macro": "^2.7.0"
   },
   "devDependencies": {
     "@types/react": "17.0.26",
+    "@types/styled-components": "^5.1.14",
+    "@typescript-eslint/parser": "^3.0.0",
+    "autoprefixer": "^10.3.6",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^1.13.2",
     "commitizen": "^4.2.4",
     "cz-emoji": "^1.3.1",
-    "eslint": "7.32.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.8",
+    "prettier": "^2.4.1",
+    "prettier-eslint": "^13.0.0",
+    "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
   },
   "config": {
     "commitizen": {
       "path": "cz-emoji"
+    }
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
     }
   }
 }
