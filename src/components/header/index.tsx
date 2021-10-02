@@ -2,12 +2,8 @@ import React from 'react';
 import InputHeader from '@/components/input-header';
 import HamburgerMenu from '@/components/hamburger-button';
 
-import {
-  Container,
-  LeftSideContainer,
-  RightSideContainer,
-  Title,
-} from './styles';
+import {Container, LeftSideContainer, RightSideContainer} from './styles';
+import {Title} from '../title';
 
 export default function Header() {
   return (
