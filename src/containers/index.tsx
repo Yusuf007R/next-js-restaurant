@@ -5,11 +5,18 @@ import PromotionInfo from '@/components/promotion-info';
 import {Title} from '@/components/title';
 import React from 'react';
 import tw from 'twin.macro';
-import {BodyContainer, Container, MidContainer} from './style';
+import {
+  BodyContainer,
+  Container,
+  FoodCategoriesContainer,
+  FoodContainer,
+  MidContainer,
+} from './style';
 import Categories from '../../public/categories.json';
+import Products from '../../public/products.json';
+import FoodItem from '@/components/food-item';
 
 export default function HomeContainer() {
-  console.log(Categories);
   return (
     <Container>
       <BodyContainer>
@@ -19,11 +26,16 @@ export default function HomeContainer() {
           <Title isBigger>Restaurant 🍔</Title>
           <DeliveryButton></DeliveryButton>
         </MidContainer>
-        <div tw="flex w-full justify-around">
+        <FoodCategoriesContainer>
           {Categories.map(e => (
             <FoodCategory {...e} key={e.id}></FoodCategory>
           ))}
-        </div>
+        </FoodCategoriesContainer>
+        <FoodContainer>
+          {Products.map(e => (
+            <FoodItem {...e} key={e.id}></FoodItem>
+          ))}
+        </FoodContainer>
       </BodyContainer>
     </Container>
   );

@@ -23,6 +23,7 @@ const ThemeStyles = createGlobalStyle`
   }
   body {
     ${tw`bg-primary text-primary`}
+    font-family: 'Nunito', sans-serif;
   }
 `;
 
