@@ -2,11 +2,11 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 
-export const Container = tw.div`flex w-full h-24 bg-primary justify-between items-center`
+export const Container = tw.div`flex w-full h-24 bg-primary items-center md:justify-between`
 
 
-export const RightSideContainer = tw.div`w-3/4`
+export const RightSideContainer = tw.div`w-full`
 
-export const LeftSideContainer = tw.div`flex w-1/6 items-center justify-around `
+export const LeftSideContainer = tw.div`flex w-max items-center justify-around `
 
-export const TitleContainer = tw.div`hidden md:block`
+export const TitleContainer = tw.div`hidden ml-6 md:block `

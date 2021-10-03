@@ -8,7 +8,7 @@ type textProps ={
   color?:string;
 }
 
-export const Container = tw.div`flex flex-col h-64 w-80 mr-10`
+export const Container = tw.div`flex flex-col h-64 w-80 `
 
 export const ImageContainer = tw.div`w-full h-2/3 rounded-3xl relative overflow-hidden`
 
