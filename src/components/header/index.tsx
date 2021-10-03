@@ -6,15 +6,18 @@ import {
   Container,
   LeftSideContainer,
   RightSideContainer,
-  Title,
+  TitleContainer,
 } from './styles';
+import {Title} from '../title';
 
 export default function Header() {
   return (
     <Container>
       <LeftSideContainer>
         <HamburgerMenu />
-        <Title>Chukwudi</Title>
+        <TitleContainer>
+          <Title>Chukwudi</Title>
+        </TitleContainer>
       </LeftSideContainer>
       <RightSideContainer>
         <InputHeader />

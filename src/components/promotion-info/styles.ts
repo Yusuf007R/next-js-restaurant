@@ -5,7 +5,7 @@ type smallTextType={
   isVariant?:boolean
 }
 
-export const Container = tw.div`flex w-5/6 h-52 bg-orange bg-opacity-10 rounded-2xl flex-row justify-center 2xl:h-64`
+export const Container = tw.div`flex w-full h-52 bg-orange bg-opacity-10 rounded-2xl flex-row justify-center 2xl:h-64`
 
 export const LeftContainer = tw.div`
 w-1/3
