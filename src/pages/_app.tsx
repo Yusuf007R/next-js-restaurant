@@ -6,6 +6,9 @@ import ThemeStyles from '../theme/theme';
 import 'tailwindcss/tailwind.css';
 import store from 'src/redux/store';
 import {Provider} from 'react-redux';
+import {app} from '../firebase';
+
+app;
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
