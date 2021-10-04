@@ -32,6 +32,9 @@ module.exports = {
           return opacityManager(props, 'var(--color-yellow)');
         },
       },
+      maxWidth: {
+        cart: '440px',
+      },
     },
   },
   variants: {

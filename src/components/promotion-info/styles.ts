@@ -5,27 +5,36 @@ type smallTextType={
   isVariant?:boolean
 }
 
-export const Container = tw.div`flex w-full h-52 bg-orange bg-opacity-10 rounded-2xl flex-row justify-center 2xl:h-64`
+export const Container = tw.div`flex w-full bg-orange items-center bg-opacity-10 justify-between pt-4 rounded-2xl flex-col sm:(flex-row pt-0)   `
 
 export const LeftContainer = tw.div`
 w-1/3
-h-full
+hidden
+h-40
 relative
+sm:block
+md:h-48
+xl:h-60
+2xl:h-72
 `
 
 export const CenterContainer = tw.div`
 flex
-h-full
-w-1/2
+w-full
+h-20
 justify-center
 items-center
 flex-col
+sm:(w-1/3 h-40)
+md:h-48
+xl:h-60 
+2xl:h-72
 `
 
-export const RightContainer = tw.div`flex h-full w-1/4 items-end justify-end   pb-8`
+export const RightContainer = tw.div`flex h-20 w-full items-end justify-end justify-self-end pb-8 pr-8 sm:(w-1/3 h-40) md:h-48 xl:h-60 2xl:h-72`
 
-export const Text = tw.p`text-3xl font-bold text-orange`
+export const Text = tw.p`text-xl text-center font-bold text-orange xl:text-3xl`
 
-export const SmallText = styled.p<smallTextType>`${tw`text-base font-bold text-center  mr-9`};
+export const SmallText = styled.p<smallTextType>`${tw`text-xs font-bold text-center lg:text-base`};
 ${({isVariant})=>isVariant? tw`text-orange`:tw`text-secondary`}
 `
