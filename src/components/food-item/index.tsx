@@ -11,30 +11,26 @@ import {
   TimeText,
   Title,
 } from './style';
+import {useStoreDispatch} from 'src/redux/store';
+import {addProduct} from 'src/redux/slices/cart-slice';
+import {productsType} from 'src/redux/slices/products-slice';
+import {theme} from 'twin.macro';
 
-type propType = {
-  id: number;
-  name: string;
-  qualification: number;
-  time: string;
-  price: number;
-  image: string;
-};
-
-export default function FoodItem({
-  image,
-  name,
-  qualification,
-  time,
-  price,
-}: propType) {
+export default function FoodItem(product: productsType) {
+  const {image, name, price, qualification, time} = product;
   const [priceRepresentation, setPriceRepresentation] = useState('');
+  const dispatch = useStoreDispatch();
   useEffect(() => {
     const stringPrice = Math.trunc(price).toString();
     setPriceRepresentation('$'.repeat(stringPrice.length));
   }, [price]);
+
+  const handleClick = () => {
+    dispatch(addProduct(product));
+  };
+
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <ImageContainer>
         <Image
           layout="fill"
@@ -53,7 +49,11 @@ export default function FoodItem({
           <Title>{name}</Title>
         </RowContainer>
         <RowContainer>
-          <StyledStarIcon height="35%" tw="mr-1.5" />
+          <StyledStarIcon
+            fill={theme`textColor.primary`}
+            height="35%"
+            tw="mr-1.5"
+          />
           <Text>{qualification}</Text>
           <Text isAlternativeColor>Coffee</Text>
           <Text isAlternativeColor>SandWich</Text>

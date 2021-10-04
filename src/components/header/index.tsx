@@ -1,16 +1,25 @@
 import React from 'react';
 import InputHeader from '@/components/input-header';
 import HamburgerMenu from '@/components/hamburger-button';
-
+import {Title} from '@/components/title';
+import CartIcon from '../../../public/assets/icons/cart-icon.svg';
 import {
   Container,
+  IconContainer,
   LeftSideContainer,
   RightSideContainer,
   TitleContainer,
 } from './styles';
-import {Title} from '../title';
+import {toggleCart} from 'src/redux/slices/cart-slice';
+import {useStoreDispatch} from 'src/redux/store';
+import {theme} from 'twin.macro';
 
 export default function Header() {
+  const dispatch = useStoreDispatch();
+  const clickHandler = () => {
+    dispatch(toggleCart());
+  };
+
   return (
     <Container>
       <LeftSideContainer>
@@ -22,6 +31,9 @@ export default function Header() {
       <RightSideContainer>
         <InputHeader />
       </RightSideContainer>
+      <IconContainer onClick={clickHandler}>
+        <CartIcon fill={theme`textColor.primary`} height="50%"></CartIcon>
+      </IconContainer>
     </Container>
   );
 }

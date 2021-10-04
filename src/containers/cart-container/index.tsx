@@ -1,10 +1,10 @@
 import React from 'react';
 import PersonIcon from '../../../public/assets/icons/person-icon.svg';
-import CartDirection from '../cart-direction';
-import CartItem from '../../components/cart-item';
-import CheckoutButton from '../../components/checkout-button';
-import Divider from '../../components/divider';
-import OrderCounter from '../../components/order-counter';
+import CartDirection from '@/components/cart-direction';
+import CartItem from '@/components/cart-item';
+import CheckoutButton from '@/components/checkout-button';
+import Divider from '@/components/divider';
+
 import {
   BodyContainer,
   BottomContainer,
@@ -18,18 +18,38 @@ import {
   Text,
   TotalContainer,
 } from './style';
+import {useStoreDispatch, useStoreSelector} from 'src/redux/store';
+import {closeCart} from 'src/redux/slices/cart-slice';
+import useCartProducts from 'src/hooks/use-cart-products';
+import {shallowEqual} from 'react-redux';
+import {theme} from 'twin.macro';
 
 export default function Cart() {
+  const totalPrice = useCartProducts();
+  const dispatch = useStoreDispatch();
+  const handleClose = () => {
+    dispatch(closeCart());
+  };
+  const {productsInCart} = useStoreSelector(
+    state => ({
+      productsInCart: state.cart.productsInCart,
+    }),
+    shallowEqual,
+  );
   return (
     <Container>
       <BodyContainer>
         <HeaderContainer>
-          <CloseButton>X</CloseButton>
+          <CloseButton onClick={handleClose}>X</CloseButton>
           <HeaderItemsGroup>
             <IconContainer>
-              <PersonIcon width="100%" height="100%" />
+              <PersonIcon
+                width="100%"
+                height="100%"
+                fill={theme`textColor.primary`}
+              />
             </IconContainer>
-            <ItemCount>3</ItemCount>
+            <ItemCount>{productsInCart.length}</ItemCount>
           </HeaderItemsGroup>
         </HeaderContainer>
         <Text>
@@ -38,23 +58,18 @@ export default function Cart() {
         <Text>
           <b>Order</b>
         </Text>
-        <CartDirection></CartDirection>
-        <CartItem></CartItem>
-        <CartItem></CartItem>
-        <CartItem></CartItem>
-        <CartItem></CartItem>
+        <CartDirection />
+        {productsInCart.map(element => (
+          <CartItem {...element} key={element.product.id}></CartItem>
+        ))}
         <TotalContainer>
           <Text>Total:</Text>
           <Text>
-            <b>$25.99</b>
+            <b>${Math.round(totalPrice * 100) / 100}</b>
           </Text>
         </TotalContainer>
-        <Divider></Divider>
+        <Divider />
         <BottomContainer>
-          <div>
-            <SmallText>Persons:</SmallText>
-            <OrderCounter></OrderCounter>
-          </div>
           <CheckoutButton>Checkout {'-->'}</CheckoutButton>
         </BottomContainer>
       </BodyContainer>

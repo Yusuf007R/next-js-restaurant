@@ -4,10 +4,10 @@ import FoodCategory from '@/components/food-category';
 import Header from '@/components/header';
 import PromotionInfo from '@/components/promotion-info';
 import {Title} from '@/components/title';
-import Categories from '../../../public/categories.json';
-import Products from '../../../public/products.json';
 import FoodItem from '@/components/food-item';
 import Cart from '../cart-container';
+import {useStoreSelector} from 'src/redux/store';
+import {shallowEqual} from 'react-redux';
 
 import {
   BodyContainer,
@@ -19,8 +19,17 @@ import {
   MidContainer,
   ScrollableContainer,
 } from './style';
+import DarkThemeToggler from '@/components/dark-theme-toggler';
 
 export default function HomeContainer() {
+  const {isCartOpen, categories, products} = useStoreSelector(
+    state => ({
+      isCartOpen: state.cart.isOpen,
+      products: state.mainStoreSlice.products,
+      categories: state.mainStoreSlice.categories,
+    }),
+    shallowEqual,
+  );
   return (
     <Container>
       <BodyContainer>
@@ -33,21 +42,24 @@ export default function HomeContainer() {
           </MidContainer>
           <ScrollableContainer>
             <FoodCategoriesContainer>
-              {Categories.map(e => (
+              {categories.map(e => (
                 <FoodCategory {...e} key={e.id}></FoodCategory>
               ))}
             </FoodCategoriesContainer>
           </ScrollableContainer>
           <FoodContainer>
-            {Products.map(e => (
+            {products.map(e => (
               <FoodItem {...e} key={e.id}></FoodItem>
             ))}
           </FoodContainer>
         </CenterContainer>
       </BodyContainer>
-      <CartContainer>
-        <Cart />
-      </CartContainer>
+      {isCartOpen && (
+        <CartContainer>
+          <Cart />
+        </CartContainer>
+      )}
+      <DarkThemeToggler />
     </Container>
   );
 }
