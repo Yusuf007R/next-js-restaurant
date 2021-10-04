@@ -54,7 +54,9 @@ export default function CartItem({
         <Text>{name}</Text>
       </TextContainer>
       <PriceContainer>
-        <Text isAlternativeColor>${price * quantity}</Text>
+        <Text isAlternativeColor>
+          ${Math.round(price * quantity * 100) / 100}
+        </Text>
         <RemoveText onClick={handleClick}>remove</RemoveText>
       </PriceContainer>
     </Container>

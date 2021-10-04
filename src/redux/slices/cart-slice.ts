@@ -50,10 +50,13 @@ export const cartSlice = createSlice({
      const index =  state.productsInCart.findIndex(element=> element.product.id === action.payload.id)
      state.productsInCart[index].quantity = action.payload.quantity
     },
+    clearCart:(state: Draft<typeof initialState>)=>{
+      state.productsInCart = []
+    }
   },
 });
 
 // Reducers and actions
-export const { openCart, closeCart ,toggleCart ,addProduct,removeProduct, changeQuantity} = cartSlice.actions;
+export const { openCart, closeCart ,toggleCart ,addProduct,removeProduct, changeQuantity,clearCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

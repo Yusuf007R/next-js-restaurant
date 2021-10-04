@@ -11,7 +11,7 @@
   },
   {
     "id": 3,
-    "name": "Asian",
+    "name": "Japanese",
     "icon": "https://image.flaticon.com/icons/svg/1895/1895684.svg"
   },
   {
@@ -28,5 +28,15 @@
     "id": 6,
     "name": "Desserts",
     "icon": "https://image.flaticon.com/icons/svg/174/174394.svg"
+  },
+  {
+    "id": 7,
+    "name": "Thai",
+    "icon": "https://image.flaticon.com/icons/svg/135/135367.svg"
+  },
+  {
+    "id": 8,
+    "name": "Noodles",
+    "icon": "https://image.flaticon.com/icons/svg/1900/1900683.svg"
   }
 ]

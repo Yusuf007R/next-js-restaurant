@@ -97,5 +97,23 @@
     "price": 8.99,
     "category": 3,
     "image": "https://i.ibb.co/HKkPW2s/photo-1.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Korean Noodles",
+    "qualification": 4.5,
+    "time": "4-12",
+    "price": 10.99,
+    "category": 8,
+    "image": "https://i.ibb.co/6F6b248/jaengban-jjajangmyeon-scaled.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Chinese Noodles",
+    "qualification": 4.2,
+    "time": "4-12",
+    "price": 12.99,
+    "category": 8,
+    "image": "https://i.ibb.co/Sw6SvsN/Lucky-Chinese-Noodles.jpg"
   }
 ]

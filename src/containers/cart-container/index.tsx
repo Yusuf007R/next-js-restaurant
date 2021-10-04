@@ -18,11 +18,13 @@ import {
   TotalContainer,
 } from './style';
 import {useStoreDispatch, useStoreSelector} from 'src/redux/store';
-import {closeCart} from 'src/redux/slices/cart-slice';
+import {clearCart, closeCart} from 'src/redux/slices/cart-slice';
 import useCartProducts from 'src/hooks/use-cart-products';
 import {shallowEqual} from 'react-redux';
-import {theme} from 'twin.macro';
+
 import LoginCard from '@/components/login-card';
+import Swal from 'sweetalert2';
+import {theme} from 'twin.macro';
 
 export default function Cart() {
   const totalPrice = useCartProducts();
@@ -36,19 +38,27 @@ export default function Cart() {
     }),
     shallowEqual,
   );
+
+  const handleCheckoutButton = () => {
+    if (!productsInCart.length) return;
+    dispatch(clearCart());
+    Swal.fire({
+      customClass: {
+        title: 'text-primary',
+        htmlContainer: 'text-primary',
+        confirmButton: 'bg-purple',
+      },
+      title: 'Payment Completed',
+      text: 'Enjoy your food.',
+      background: theme`backgroundColor.secondary`,
+    });
+  };
   return (
     <Container>
       <BodyContainer>
         <HeaderContainer>
           <CloseButton onClick={handleClose}>X</CloseButton>
           <HeaderItemsGroup>
-            {/* <IconContainer>
-              <PersonIcon
-                width="100%"
-                height="100%"
-                fill={theme`textColor.primary`}
-              />
-            </IconContainer> */}
             <LoginCard></LoginCard>
             <ItemCount>{productsInCart.length}</ItemCount>
           </HeaderItemsGroup>
@@ -71,7 +81,9 @@ export default function Cart() {
         </TotalContainer>
         <Divider />
         <BottomContainer>
-          <CheckoutButton>Checkout {'-->'}</CheckoutButton>
+          <CheckoutButton onClick={handleCheckoutButton}>
+            Checkout {'-->'}
+          </CheckoutButton>
         </BottomContainer>
       </BodyContainer>
     </Container>
