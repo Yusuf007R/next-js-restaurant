@@ -12,14 +12,14 @@ export default function FoodCategory({name, icon, id}: categoriesType) {
   );
   const dispatch = useStoreDispatch();
   const themeContext = useContext(ThemeContext);
-  const isPressed = name === 'All';
+  const isPressed = currentCategory === id;
 
   const handleClick = () => {
     dispatch(setCurrentCategory(id));
   };
 
   return (
-    <Container onClick={handleClick} isPressed={currentCategory === id}>
+    <Container onClick={handleClick} isPressed={isPressed}>
       <IconContainer>
         <StyledImage
           width="35%"
