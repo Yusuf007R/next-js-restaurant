@@ -13,6 +13,7 @@ import {
 import {toggleCart} from 'src/redux/slices/cart-slice';
 import {useStoreDispatch} from 'src/redux/store';
 import {theme} from 'twin.macro';
+import useWindowDimensions from 'src/hooks/use-window-dimensions';
 
 export default function Header() {
   const dispatch = useStoreDispatch();
@@ -20,6 +21,7 @@ export default function Header() {
     dispatch(toggleCart());
   };
 
+  const {width} = useWindowDimensions();
   return (
     <Container>
       <LeftSideContainer>
@@ -31,9 +33,11 @@ export default function Header() {
       <RightSideContainer>
         <InputHeader />
       </RightSideContainer>
-      <IconContainer onClick={clickHandler}>
-        <CartIcon fill={theme`textColor.primary`} height="50%"></CartIcon>
-      </IconContainer>
+      {width < 1600 && (
+        <IconContainer onClick={clickHandler}>
+          <CartIcon fill={theme`textColor.primary`} height="50%"></CartIcon>
+        </IconContainer>
+      )}
     </Container>
   );
 }

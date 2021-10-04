@@ -13,11 +13,11 @@ type textType ={
 }
 
 type imageType = {
-  isDark?:boolean
+  isDarkTheme?:boolean
 }
 
 export const Container = styled.div<containerType>`
-${ tw`flex items-center  flex-col w-24 h-44 rounded-full pt-3 shadow-md mr-8 hover:cursor-pointer`}
+${ tw`flex items-center  flex-col w-24 h-44 rounded-full pt-3 shadow-md mr-8 hover:cursor-pointer transform transition duration-300 hover:scale-105`}
 ${({isPressed})=>isPressed? tw`bg-yellow`: tw`bg-secondary`}
 `
 
@@ -31,5 +31,6 @@ export const Text = styled.p<textType>`
 `
 
 export const StyledImage = styled(Image)<imageType>`
-  filter:${({isDark})=>isDark? 'invert(1);':' invert(0)'}
+  filter:${({isDarkTheme})=>isDarkTheme? 'invert(1);':' invert(0)'}
+  
 `
