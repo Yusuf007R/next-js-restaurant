@@ -8,7 +8,7 @@ type textProps ={
   color?:string;
 }
 
-export const Container = tw.div`flex flex-col h-64 w-80 hover:cursor-pointer `
+export const Container = tw.div`flex flex-col h-64 w-80 hover:cursor-pointer transform transition duration-300 hover:scale-105 `
 
 export const ImageContainer = tw.div`w-full h-2/3 rounded-3xl relative overflow-hidden`
 

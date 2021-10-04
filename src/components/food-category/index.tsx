@@ -3,19 +3,31 @@ import {Container, IconContainer, StyledImage, Text} from './style';
 import {categoriesType} from 'src/redux/slices/products-slice';
 import {ThemeContext} from 'src/theme/theme-provider';
 import {theme} from 'twin.macro';
+import {useStoreDispatch, useStoreSelector} from 'src/redux/store';
+import {setCurrentCategory} from 'src/redux/slices/products-slice';
 
-export default function FoodCategory({name, icon}: categoriesType) {
+export default function FoodCategory({name, icon, id}: categoriesType) {
+  const currentCategory = useStoreSelector(
+    state => state.mainStoreSlice.currentCategory,
+  );
+  const dispatch = useStoreDispatch();
   const themeContext = useContext(ThemeContext);
   const isPressed = name === 'All';
+
+  const handleClick = () => {
+    dispatch(setCurrentCategory(id));
+  };
+
   return (
-    <Container isPressed={isPressed}>
+    <Container onClick={handleClick} isPressed={currentCategory === id}>
       <IconContainer>
         <StyledImage
-          isDark={themeContext.theme === 'dark'}
           width="35%"
           height="35%"
           alt={`${name} icon`}
-          src={icon}></StyledImage>
+          src={icon}
+          isDarkTheme={themeContext.theme === 'dark'}
+        />
       </IconContainer>
       <Text
         color={isPressed ? theme`textColor.black` : theme`textColor.primary`}>

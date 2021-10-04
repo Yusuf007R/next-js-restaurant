@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 
 
 export const fetchData = createAsyncThunk(
-  'users/fetchByIdStatus',
+  'users/getData',
   async () => {
     try {
       const response =  await fetch('/api/getdata')
@@ -26,22 +26,27 @@ export type productsType={
     time: string;
     price: number;
     image: string;
-
+    category:number
 }
 
 type sliceType ={
   categories:categoriesType[]
   products:productsType[]
+  currentCategory:number;
 }
 
 const initialState:sliceType={
-  products:[],categories:[]
+  products:[],categories:[],
+  currentCategory:1
 }
 
 const mainStoreSlice = createSlice({
-  name: 'mainStore',
+  name: 'main-store',
   initialState: initialState,
   reducers: {
+    setCurrentCategory:(state: Draft<typeof initialState>, action: PayloadAction<number>)=>{
+      state.currentCategory = action.payload
+     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
@@ -49,8 +54,9 @@ const mainStoreSlice = createSlice({
       state.products = action.payload.products
     })
   },
-})
 
+})
+export const {setCurrentCategory} = mainStoreSlice.actions;
 
 
 export default mainStoreSlice.reducer;

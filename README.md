@@ -1,5 +1,5 @@
 
-# 🤯next.js-restaurant
+# 🤯Next.js-restaurant
 
 a next.js restaurant app, with redux-toolkit and tailwindcss
 
