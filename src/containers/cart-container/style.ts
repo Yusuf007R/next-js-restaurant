@@ -17,11 +17,10 @@ export const HeaderItemsGroup = tw.div`flex flex-row items-center`
 
 export const Text = tw.p`
 text-2xl
-text-black
+text-primary
 `
 export const TotalContainer = tw.div`flex w-full  flex-row justify-between mt-10 mb-4 `
 
-export const BottomContainer = tw.div`w-full h-20 flex flex-row justify-between items-center pt-10 `
+export const BottomContainer = tw.div`w-full h-20 flex flex-row justify-end items-center pt-10 `
 
-
-export const SmallText = tw.div`text-black text-sm`
+export const SmallText = tw.div`text-primary text-sm`

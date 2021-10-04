@@ -2,32 +2,59 @@ import React from 'react';
 import {
   Container,
   ImageContainer,
+  Input,
   RemoveText,
   Text,
   TextContainer,
 } from './style';
 import Image from 'next/image';
+import {useStoreDispatch} from 'src/redux/store';
+import {changeQuantity, removeProduct} from 'src/redux/slices/cart-slice';
+import {productsType} from 'src/redux/slices/products-slice';
 
-export default function CartItem() {
+type propsType = {
+  product: productsType;
+  quantity: number;
+};
+
+export default function CartItem({
+  product: {image, name, price, id},
+  quantity,
+}: propsType) {
+  const dispatch = useStoreDispatch();
+  const handleClick = () => {
+    dispatch(removeProduct(id));
+  };
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = parseInt(event.target.value);
+    if (isNaN(value)) {
+      value = 0;
+    }
+    dispatch(changeQuantity({id, quantity: value}));
+  };
   return (
     <Container>
       <ImageContainer>
         <Image
           alt="temp"
-          src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+          src={image}
           width="100%"
           height="100%"
           objectFit="cover"
         />
       </ImageContainer>
       <TextContainer>
-        <Text>1</Text>
+        <Input
+          value={quantity.toString()}
+          type="number"
+          onChange={handleInput}
+        />
         <Text>x</Text>
-        <Text>Beach BBQBurger</Text>
+        <Text>{name}</Text>
       </TextContainer>
       <div>
-        <Text isAlternativeColor>$14.99</Text>
-        <RemoveText>remove</RemoveText>
+        <Text isAlternativeColor>${price}</Text>
+        <RemoveText onClick={handleClick}>remove</RemoveText>
       </div>
     </Container>
   );

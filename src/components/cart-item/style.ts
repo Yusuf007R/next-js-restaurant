@@ -11,10 +11,18 @@ export const Container = tw.div`flex w-full h-16 justify-between items-center mb
 export const ImageContainer = tw.div`w-24 h-full rounded-xl overflow-hidden`;
 
 export const Text = styled.p<textType>`
-${tw`break-words m-1`};
-${({isAlternativeColor})=>isAlternativeColor? tw`text-gray-500` : tw`text-black`};
+${tw`m-1 break-normal text-sm`};
+${({isAlternativeColor})=>isAlternativeColor? tw`text-secondary` : tw`text-primary`};
 `
-export const TextContainer = tw.div`flex items-center`
+export const TextContainer = tw.div`flex items-center w-44 justify-center`
+
+export const Input = styled.input`
+${tw`w-6 h-6 ml-1.5 border-gray-500 text-black border rounded-md text-center`}
+&::-webkit-outer-spin-button,
+&::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}`
 
 
-export const RemoveText = tw.div`text-sm text-black hover:cursor-pointer w-full text-center underline`
+export const RemoveText = tw.div`text-sm text-primary hover:cursor-pointer w-full text-center underline`
