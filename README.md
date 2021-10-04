@@ -1,7 +1,9 @@
 
+
 # 🤯Next.js-restaurant
 
-a next.js restaurant app, with redux-toolkit and tailwindcss
+
+A next.js restaurant app, with redux-toolkit and tailwindcss
 
 
 
@@ -9,16 +11,15 @@ a next.js restaurant app, with redux-toolkit and tailwindcss
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)  ![tailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) 
 
-  
+ 
 ## 🦄Features
-- next-js
+
+- Next-js
 - DarkMode 🐱‍👤
 - Typescript 🔥
-- full responsiveness
+- Full responsiveness
 
 
-
-  
 ## 📷Screenshots
 
 
