@@ -4,13 +4,12 @@ import {
   LoginButton,
   LoginWithContainer,
   SocialContainer,
+  UserText,
 } from './style';
-import PersonIcon from '../../../public/assets/icons/person-icon.svg';
-import {theme} from 'twin.macro';
+
 import FacebookIcon from '../../../public/assets/icons/facebook-icon.svg';
 import TwitterIcon from '../../../public/assets/icons/twitter-icon.svg';
 import GoogleIcon from '../../../public/assets/icons/google-icon.svg';
-import {IconContainer} from './style';
 import useFirebaseAuth, {loginType} from 'src/hooks/use-firebase-auth';
 
 export default function LoginCard() {
@@ -27,17 +26,13 @@ export default function LoginCard() {
   return (
     <Container>
       {user ? (
-        <IconContainer>
-          <PersonIcon
-            width="100%"
-            height="100%"
-            fill={theme`textColor.primary`}
-          />
-        </IconContainer>
+        <UserText>
+          Hola, {user?.displayName?.slice(0, user?.displayName.indexOf(' '))}!
+        </UserText>
       ) : (
         <LoginButton onClick={toggleIsVisible}>Login</LoginButton>
       )}
-      {isVisible && (
+      {isVisible && user === undefined && (
         <LoginWithContainer>
           <SocialContainer onClick={() => handleClick('google')}>
             <GoogleIcon height="100%" width="100%"></GoogleIcon>
