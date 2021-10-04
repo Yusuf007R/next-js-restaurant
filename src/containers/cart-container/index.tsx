@@ -14,7 +14,6 @@ import {
   HeaderItemsGroup,
   IconContainer,
   ItemCount,
-  SmallText,
   Text,
   TotalContainer,
 } from './style';
@@ -23,6 +22,7 @@ import {closeCart} from 'src/redux/slices/cart-slice';
 import useCartProducts from 'src/hooks/use-cart-products';
 import {shallowEqual} from 'react-redux';
 import {theme} from 'twin.macro';
+import LoginCard from '@/components/login-card';
 
 export default function Cart() {
   const totalPrice = useCartProducts();
@@ -42,13 +42,14 @@ export default function Cart() {
         <HeaderContainer>
           <CloseButton onClick={handleClose}>X</CloseButton>
           <HeaderItemsGroup>
-            <IconContainer>
+            {/* <IconContainer>
               <PersonIcon
                 width="100%"
                 height="100%"
                 fill={theme`textColor.primary`}
               />
-            </IconContainer>
+            </IconContainer> */}
+            <LoginCard></LoginCard>
             <ItemCount>{productsInCart.length}</ItemCount>
           </HeaderItemsGroup>
         </HeaderContainer>
