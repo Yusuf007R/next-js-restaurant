@@ -5,7 +5,7 @@ import PromotionInfo from '@/components/promotion-info';
 import HomeContainer from 'src/containers/home-container';
 
 const Home: NextPage = () => {
-  return <HomeContainer></HomeContainer>;
+  return <HomeContainer />;
 };
 
 export default Home;

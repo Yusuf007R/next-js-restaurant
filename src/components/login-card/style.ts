@@ -10,4 +10,4 @@ export const SocialContainer = tw.div`w-8 h-8 relative hover:cursor-pointer`
 
 export const LoginWithContainer = tw.div`flex justify-around items-center absolute top-20 rounded-2xl w-44 h-20 bg-primary  `
 
-
+export const UserText = tw.p`mr-4`
