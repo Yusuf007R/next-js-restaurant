@@ -17,7 +17,7 @@ const initialState : useCartType = {
 
 //slice
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: 'cart-store',
   initialState,
   reducers: {
     openCart: (state: Draft<typeof initialState>) => {

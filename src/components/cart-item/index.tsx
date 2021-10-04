@@ -3,6 +3,7 @@ import {
   Container,
   ImageContainer,
   Input,
+  PriceContainer,
   RemoveText,
   Text,
   TextContainer,
@@ -52,10 +53,10 @@ export default function CartItem({
         <Text>x</Text>
         <Text>{name}</Text>
       </TextContainer>
-      <div>
-        <Text isAlternativeColor>${price}</Text>
+      <PriceContainer>
+        <Text isAlternativeColor>${price * quantity}</Text>
         <RemoveText onClick={handleClick}>remove</RemoveText>
-      </div>
+      </PriceContainer>
     </Container>
   );
 }

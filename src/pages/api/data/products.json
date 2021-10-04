@@ -1,67 +1,101 @@
 [
   {
     "id": 1,
-    "name": "Filete de ternera con salsa",
+    "name": "Beef steak with sauce",
     "qualification": 4.9,
     "time": "25-30",
     "price": 14.99,
+    "category": 5,
     "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
     "id": 2,
-    "name": "Desayuno de primer plano lácteos",
+    "name": "Hotcake",
     "qualification": 4.7,
     "time": "20-25",
+    "category": 6,
     "price": 9.99,
     "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
     "id": 3,
-    "name": "Burrito de pollo",
+    "name": "Chicken burrito",
     "qualification": 4.6,
     "time": "25-30",
     "price": 13.99,
+    "category": 4,
     "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
     "id": 4,
-    "name": "Plato de salmón",
+    "name": "Salmon",
     "qualification": 4.5,
     "time": "25-30",
     "price": 15.99,
+    "category": 5,
     "image": "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
     "id": 5,
-    "name": "Postre",
+    "name": "Fruid Salad",
     "qualification": 4.8,
     "time": "15-20",
+    "category": 6,
     "price": 6.99,
     "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
     "id": 6,
-    "name": "Sándwich servido en la tabla de cortar",
+    "name": "Sándwich",
     "qualification": 4.7,
-    "time": "10-15",
-
+    "time": "5-8",
+    "category": 4,
     "price": 9.99,
     "image": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
   },
   {
-    "id": 7,
-    "name": "Plato de aguacate cocido",
-    "qualification": 4.4,
-    "time": "15-25",
-    "price": 12.99,
-    "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
-  },
-  {
     "id": 8,
-    "name": "Hamburguesa",
+    "name": "Hamburger",
     "qualification": 4.6,
     "time": "10-15",
     "price": 14.99,
+    "category": 4,
     "image": "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+  },
+  {
+    "id": 9,
+    "name": "Peperoni Pizza",
+    "qualification": 4.9,
+    "time": "10-20",
+    "price": 14.99,
+    "category": 2,
+    "image": "https://i.ibb.co/WtRz7R6/opt-aboutcom-coeus-resources-content-migration-simply-recipes-uploads-2019-09-easy-pepperoni-pizza-l.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Cheese Pizza",
+    "qualification": 4.4,
+    "time": "10-20",
+    "price": 11.99,
+    "category": 2,
+    "image": "https://i.ibb.co/CmwxStf/photo.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Onigiri",
+    "qualification": 4.2,
+    "time": "2-5",
+    "price": 5.99,
+    "category": 3,
+    "image": "https://i.ibb.co/Srt7ZfW/Onigiri-Japanese-Rice-Balls-3469.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Sushi",
+    "qualification": 5,
+    "time": "2-8",
+    "price": 8.99,
+    "category": 3,
+    "image": "https://i.ibb.co/HKkPW2s/photo-1.jpg"
   }
 ]

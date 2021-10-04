@@ -10,6 +10,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['image.flaticon.com', 'images.pexels.com'],
+    domains: ['image.flaticon.com', 'images.pexels.com', 'i.ibb.co'],
   },
 };

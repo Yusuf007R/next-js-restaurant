@@ -6,9 +6,11 @@ import ThemeStyles from '../theme/theme';
 import 'tailwindcss/tailwind.css';
 import store from 'src/redux/store';
 import {Provider} from 'react-redux';
-import {app} from '../firebase';
 
-app;
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistStore} from 'redux-persist';
+
+let persistor = persistStore(store);
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
@@ -16,7 +18,9 @@ function MyApp({Component, pageProps}: AppProps) {
       <GlobalStyles />
       <ThemeStyles />
       <ThemeProvider>
-        <Component {...pageProps} />
+        <PersistGate loading={null} persistor={persistor}>
+          <Component {...pageProps} />
+        </PersistGate>
       </ThemeProvider>
     </Provider>
   );

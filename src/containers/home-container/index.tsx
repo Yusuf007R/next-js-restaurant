@@ -8,7 +8,7 @@ import FoodItem from '@/components/food-item';
 import Cart from '../cart-container';
 import {useStoreSelector} from 'src/redux/store';
 import {shallowEqual} from 'react-redux';
-
+import DarkThemeToggler from '@/components/dark-theme-toggler';
 import {
   BodyContainer,
   CartContainer,
@@ -19,17 +19,23 @@ import {
   MidContainer,
   ScrollableContainer,
 } from './style';
-import DarkThemeToggler from '@/components/dark-theme-toggler';
+import useWindowDimensions from 'src/hooks/use-window-dimensions';
 
 export default function HomeContainer() {
-  const {isCartOpen, categories, products} = useStoreSelector(
+  const {isCartOpen, categories, products, currentCategory} = useStoreSelector(
     state => ({
       isCartOpen: state.cart.isOpen,
       products: state.mainStoreSlice.products,
       categories: state.mainStoreSlice.categories,
+      currentCategory: state.mainStoreSlice.currentCategory,
     }),
     shallowEqual,
   );
+  const filteredProducts = (() => {
+    if (currentCategory === 1) return products;
+    return products.filter(element => element.category === currentCategory);
+  })();
+  const {width} = useWindowDimensions();
   return (
     <Container>
       <BodyContainer>
@@ -48,13 +54,13 @@ export default function HomeContainer() {
             </FoodCategoriesContainer>
           </ScrollableContainer>
           <FoodContainer>
-            {products.map(e => (
+            {filteredProducts.map(e => (
               <FoodItem {...e} key={e.id}></FoodItem>
             ))}
           </FoodContainer>
         </CenterContainer>
       </BodyContainer>
-      {isCartOpen && (
+      {(isCartOpen || width > 1600) && (
         <CartContainer>
           <Cart />
         </CartContainer>
