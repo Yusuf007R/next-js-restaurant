@@ -10,7 +10,7 @@ type useCartType={
 
 //initialState
 const initialState : useCartType = {
-  isOpen:true,
+  isOpen:false,
   productsInCart:[], 
 }
 

@@ -5,6 +5,11 @@ import Image from 'next/image';
 
 type containerType={
   isPressed:boolean
+
+}
+
+type textType ={
+  color:string
 }
 
 type imageType = {
@@ -20,9 +25,9 @@ ${({isPressed})=>isPressed? tw`bg-yellow`: tw`bg-secondary`}
 export const IconContainer = tw.div`flex justify-center items-center w-20 h-20 rounded-full bg-primary mb-4 shadow-md`
 
 
-export const Text = tw.p`
-text-sm 
-text-primary
+export const Text = styled.p<textType>`
+ ${tw`text-sm`}
+  color:${({color})=>color} 
 `
 
 export const StyledImage = styled(Image)<imageType>`
