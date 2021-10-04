@@ -9,4 +9,4 @@ export const RightSideContainer = tw.div`w-full`
 
 export const LeftSideContainer = tw.div`flex w-max items-center justify-around `
 
-export const TitleContainer = tw.div`hidden ml-6 md:block `
+export const TitleContainer = tw.div`hidden ml-6 md:block hover:cursor-pointer`

@@ -7,6 +7,8 @@ import {Title} from '@/components/title';
 import Categories from '../../../public/categories.json';
 import Products from '../../../public/products.json';
 import FoodItem from '@/components/food-item';
+import Cart from '../cart-container';
+
 import {
   BodyContainer,
   CartContainer,
@@ -17,7 +19,6 @@ import {
   MidContainer,
   ScrollableContainer,
 } from './style';
-import Cart from '@/components/cart';
 
 export default function HomeContainer() {
   return (

@@ -15,6 +15,7 @@ relative
 sm:block
 md:h-48
 xl:h-60
+2xl:h-72
 `
 
 export const CenterContainer = tw.div`
@@ -27,9 +28,10 @@ flex-col
 sm:(w-1/3 h-40)
 md:h-48
 xl:h-60 
+2xl:h-72
 `
 
-export const RightContainer = tw.div`flex h-20 w-full items-end justify-end justify-self-end pb-8 pr-8 sm:(w-1/3 h-40) md:h-48 xl:h-60`
+export const RightContainer = tw.div`flex h-20 w-full items-end justify-end justify-self-end pb-8 pr-8 sm:(w-1/3 h-40) md:h-48 xl:h-60 2xl:h-72`
 
 export const Text = tw.p`text-xl text-center font-bold text-orange xl:text-3xl`
 

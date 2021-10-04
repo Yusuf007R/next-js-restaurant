@@ -12,6 +12,7 @@ w-44
 h-12
 bg-orange
 rounded-3xl
+hover:cursor-pointer
 `
 
 

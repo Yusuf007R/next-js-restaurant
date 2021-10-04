@@ -6,7 +6,7 @@ type containerType={
 }
 
 export const Container = styled.div<containerType>`
-${ tw`flex items-center  flex-col w-24 h-44 rounded-full pt-3 shadow-md mr-8`}
+${ tw`flex items-center  flex-col w-24 h-44 rounded-full pt-3 shadow-md mr-8 hover:cursor-pointer`}
 ${({isPressed})=>isPressed? tw`bg-yellow`: tw`bg-secondary`}
 `
 
